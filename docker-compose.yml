@@ -2,7 +2,7 @@
 services:
 
   user-service:
-    image: users_service:1.0.1
+    image: users:1.0.0
     container_name: user-service
     restart: always
     env_file: .env
@@ -12,7 +12,7 @@ services:
       - scroll-network
 
   video-service:
-    image: video_service:1.0.1
+    image: video:1.0.0
     container_name: video-service
     restart: always
     env_file: .env
@@ -22,7 +22,7 @@ services:
       - scroll-network
 
   analytics-service:
-    image: analytics_service:1.0.1
+    image: analytics:1.0.0
     container_name: analytics-service
     restart: always
     env_file: .env
