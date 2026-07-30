@@ -1,7 +1,7 @@
 
 services:
   users_service_migrate:
-    image: users_service:1.0.1
+    image: users:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
@@ -12,7 +12,7 @@ services:
     restart: "no"
 
   video_service_migrate:
-    image: video_service:1.0.1
+    image: video:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
@@ -23,7 +23,7 @@ services:
     restart: "no"
 
   analytics_service_migrate:
-    image: analytics_service:1.0.1
+    image: analytics:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}

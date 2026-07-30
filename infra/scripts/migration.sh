@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ENV="--env-file /home/abhishek/prod/social-media/.env"
-COMPOSE_FILES="-f /home/abhishek/prod/social-media/docker-compose.migrate.yml"
+ENV="--env-file /home/abhishek/prod/microservices-cdn-semver/.env"
+COMPOSE_FILES="-f /home/abhishek/prod/microservices-cdn-semver/docker-compose.migrate.yml"
 
 set -e  # stop on error
 
