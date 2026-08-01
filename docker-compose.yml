@@ -2,7 +2,7 @@
 services:
 
   user-service:
-    image: iapsingh/microservices-cdn-semver-users:1.0.0
+    image: iapsingh/microservices-cdn-semver-user:1.0.0
     container_name: user-service
     restart: always
     env_file: .env
@@ -12,7 +12,7 @@ services:
       - scroll-network
 
   video-service:
-    image: iapsingh/microservices-cdn-semver-videos:1.0.0
+    image: iapsingh/microservices-cdn-semver-video:1.0.0
     container_name: video-service
     restart: always
     env_file: .env

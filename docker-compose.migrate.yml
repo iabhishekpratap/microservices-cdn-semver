@@ -12,7 +12,7 @@ services:
     restart: "no"
 
   video_service_migrate:
-    image: iapsingh/microservices-cdn-semver-videos:1.0.0
+    image: iapsingh/microservices-cdn-semver-video:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
