@@ -1,7 +1,7 @@
 
 services:
   users_service_migrate:
-    image: users:1.0.0
+    image: iapsingh/microservices-cdn-semver-users:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
@@ -12,7 +12,7 @@ services:
     restart: "no"
 
   video_service_migrate:
-    image: video:1.0.0
+    image: iapsingh/microservices-cdn-semver-videos:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
@@ -23,7 +23,7 @@ services:
     restart: "no"
 
   analytics_service_migrate:
-    image: analytics:1.0.0
+    image: iapsingh/microservices-cdn-semver-analytics:1.0.0
     command: ["python", "manage.py", "migrate"]
     environment:
       POSTGRES_HOST: ${POSTGRES_HOST}
