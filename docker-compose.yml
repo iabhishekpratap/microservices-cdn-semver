@@ -32,7 +32,7 @@ services:
       - scroll-network
 
   frontend:
-    image: iapsingh/microservices-cdn-semver-frontend:1.0.0
+    image: iapsingh/microservices-cdn-semver-frontend:2.0.0
     container_name: frontend-service
     restart: always
     ports:
