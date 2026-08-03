@@ -1,6 +1,6 @@
-const USER_API = 'http://127.0.0.1:8001/api/users';
-const VIDEO_API = 'http://127.0.0.1:8002/api/videos';
-const ANALYTICS_API = 'http://127.0.0.1:8003/api/analytics';
+const USER_API = "/api/users";
+const VIDEO_API = "/api/videos";
+const ANALYTICS_API = "/api/analytics";
 
 // Check Auth State on Load
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,19 +43,19 @@ async function handleAuth(e) {
             if (!res.ok) throw new Error('Registration failed. Username may exist.');
             authMode = 'login'; // auto switch to login mode right after
         }
-        
+
         // Login against User Service
         const loginRes = await fetch(`${USER_API}/login/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
         });
-        
+
         if (!loginRes.ok) throw new Error('Invalid credentials');
-        
+
         const data = await loginRes.json();
         localStorage.setItem('access_token', data.access);
-        
+
         // Get user details
         const meRes = await fetch(`${USER_API}/me/`, {
             headers: { 'Authorization': `Bearer ${data.access}` }
@@ -118,7 +118,7 @@ async function uploadVideo() {
         });
 
         if (!res.ok) throw new Error('Failed to upload video to S3 via Video Service');
-        
+
         closeUploadModal();
         loadFeed(); // Reload feed to show new video natively embedded from S3
     } catch (error) {
@@ -133,9 +133,9 @@ async function loadFeed() {
     try {
         const res = await fetch(`${VIDEO_API}/`);
         if (!res.ok) throw new Error('Failed to fetch videos from Video Service');
-        
+
         const videos = await res.json();
-        
+
         if (videos.length === 0) {
             feedContainer.innerHTML = `<div class="video-placeholder"><p>No videos yet! Click + Upload to start.</p></div>`;
             return;
@@ -157,7 +157,7 @@ async function loadFeed() {
                 </div>
             `;
             feedContainer.appendChild(wrapper);
-            
+
             // Allow toggling play/pause or mute via clicks
             const vidObj = wrapper.querySelector('video');
             vidObj.addEventListener('click', () => {
@@ -184,7 +184,7 @@ function setupAnalyticsObserver() {
         entries.forEach(entry => {
             const videoId = entry.target.dataset.videoId;
             const videoEl = entry.target.querySelector('video');
-            
+
             if (entry.isIntersecting) {
                 // Video came into the viewport
                 videoEl.play().catch(e => console.log('Autoplay prevented by browser', e));
@@ -192,7 +192,7 @@ function setupAnalyticsObserver() {
             } else {
                 // Video left the viewport
                 videoEl.pause();
-                
+
                 if (watchTimers[videoId]) {
                     const durationSeconds = (Date.now() - watchTimers[videoId]) / 1000;
                     if (durationSeconds > 0.5) { // Track only if watched for more than 0.5s smoothly
@@ -211,7 +211,7 @@ function setupAnalyticsObserver() {
 
 function reportWatchTime(videoId, durationSeconds) {
     const userId = localStorage.getItem('user_id') || 1;
-    
+
     // Async Fire and forget (don't block the UI thread waiting for Analytics response) 
     fetch(`${ANALYTICS_API}/record/`, {
         method: 'POST',
@@ -224,5 +224,5 @@ function reportWatchTime(videoId, durationSeconds) {
             watch_duration_seconds: durationSeconds
         })
     }).then(res => console.log(`Watch time tracked in Analytics Service for video ${videoId}!`))
-      .catch(err => console.log('Analytics ping failed', err));
+        .catch(err => console.log('Analytics ping failed', err));
 }
