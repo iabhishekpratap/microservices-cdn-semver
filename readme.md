@@ -1,13 +1,8 @@
-http://127.0.0.1:8001/api/users/
-http://127.0.0.1:8002/api/videos/
-http://127.0.0.1:8003/api/analytics/
+# Project Name
 
-echo "📦 Applying database migrations for User Service..."
-(cd users_service && python manage.py makemigrations users && python manage.py migrate)
 
-echo "📦 Applying database migrations for Video Service..."
-(cd video_service && python manage.py makemigrations videos && python manage.py migrate)
+[![Last Commit](https://img.shields.io/github/last-commit/iabhishekpratap/microservices-cdn-semver)]([https://github.com/USERNAME/REPOSITORY](https://github.com/iabhishekpratap/microservices-cdn-semver))
 
-echo "📦 Applying database migrations for Analytics Service..."
-(cd analytics_service && python manage.py makemigrations analytics && python manage.py migrate)
+## Overview
 
+Your project description here...
