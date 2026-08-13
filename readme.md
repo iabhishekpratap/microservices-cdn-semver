@@ -44,7 +44,7 @@ Solves two key challenges:
 
 ## CDN Video Delivery Flow
 
-![cdn-flow.png](assets\cdn-flow.png)
+![cdn-flow.png](assets/cdn-flow.png)
 
 --- 
 
