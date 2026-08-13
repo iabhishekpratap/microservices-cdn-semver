@@ -113,24 +113,24 @@ docker compose psrr
 
 ## Screenshots
 
-![a.png](assets\a.png)
+![a.png](assets/a.png)
 
-![b.png](C:\Users\abhishek\Downloads\cdn\b.png)
+![b.png](assets/b.png)
 
-![c.png](C:\Users\abhishek\Downloads\cdn\c.png)
+![c.png](assets/c.png)
 
-![d.png](C:\Users\abhishek\Downloads\cdn\d.png)
+![d.png](assets/d.png)
 
-![e.png](C:\Users\abhishek\Downloads\cdn\e.png)
+![e.png](assets/e.png)
 
-![f.png](C:\Users\abhishek\Downloads\cdn\f.png)
+![f.png](assets/f.png)
 
-![g.png](C:\Users\abhishek\Downloads\cdn\g.png)
+![g.png](assets/g.png)
 
-![h.png](C:\Users\abhishek\Downloads\cdn\h.png)
+![h.png](assets/h.png)
 
-![i.png](C:\Users\abhishek\Downloads\cdn\i.png)
+![i.png](assets/i.png)
 
-![j.png](C:\Users\abhishek\Downloads\cdn\j.png)
+![j.png](assets/j.png)
 
-![k.png](C:\Users\abhishek\Downloads\cdn\k.png)
+![k.png](assets/k.png)
