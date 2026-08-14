@@ -134,3 +134,8 @@ docker compose psrr
 ![j.png](assets/j.png)
 
 ![k.png](assets/k.png)
+---
+
+## Support
+
+For issues, please open a GitHub ticket.
