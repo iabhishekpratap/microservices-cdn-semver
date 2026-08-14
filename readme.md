@@ -136,6 +136,8 @@ docker compose psrr
 ![k.png](assets/k.png)
 ---
 
-## Support
+## Contributing
 
-For issues, please open a GitHub ticket.
+We welcome contributions! If you have ideas for enhancements or find any issues, please open a pull request or file an issue.
+
+Happy Coding! 🚀
